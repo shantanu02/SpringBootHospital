@@ -5,8 +5,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PatientTreatement")
-public class PatientTreatement {
+@Table(name = "PatientTreatment")
+public class PatientTreatment {
 
 	@Id
     private int ptId;
@@ -14,6 +14,8 @@ public class PatientTreatement {
     private String ptMDNote;
     private String ptDoctorNote;
     private String ptOthers;
+
+
 	public int getPtId() {
 		return ptId;
 	}
@@ -44,7 +46,7 @@ public class PatientTreatement {
 	public void setPtOthers(String ptOthers) {
 		this.ptOthers = ptOthers;
 	}
-	public PatientTreatement(int ptId, String ptNurseNote, String ptMDNote, String ptDoctorNote, String ptOthers) {
+	public PatientTreatment(int ptId, String ptNurseNote, String ptMDNote, String ptDoctorNote, String ptOthers) {
 		super();
 		this.ptId = ptId;
 		this.ptNurseNote = ptNurseNote;
@@ -52,13 +54,13 @@ public class PatientTreatement {
 		this.ptDoctorNote = ptDoctorNote;
 		this.ptOthers = ptOthers;
 	}
-	public PatientTreatement() {
+	public PatientTreatment() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	@Override
 	public String toString() {
-		return "PatientTreatement [ptId=" + ptId + ", ptNurseNote=" + ptNurseNote + ", ptMDNote=" + ptMDNote
+		return "PatientTreatment [ptId=" + ptId + ", ptNurseNote=" + ptNurseNote + ", ptMDNote=" + ptMDNote
 				+ ", ptDoctorNote=" + ptDoctorNote + ", ptOthers=" + ptOthers + "]";
 	}
     
