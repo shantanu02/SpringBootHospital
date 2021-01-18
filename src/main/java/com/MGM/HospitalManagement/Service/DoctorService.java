@@ -13,4 +13,6 @@ public interface DoctorService {
 	List<Doctor> getAllDoctor();
 
 	void deleteDoctor(int doctor_id);
+	
+	void modifyDoctor(Doctor doctor);
 }

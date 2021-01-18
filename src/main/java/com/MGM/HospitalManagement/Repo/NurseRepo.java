@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.MGM.HospitalManagement.dto.Nurse;
 
-public interface NusreRepo  extends JpaRepository<Nurse, Integer>{
+public interface NurseRepo  extends JpaRepository<Nurse, Integer>{
 
 }

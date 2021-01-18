@@ -50,4 +50,11 @@ public class DoctorServiceImple  implements DoctorService{
 		
 	}
 
+	@Override
+	public void modifyDoctor(Doctor doctor) {
+		 doctorRepo.save(doctor);
+		
+		
+	}
+
 }
