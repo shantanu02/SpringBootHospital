@@ -31,11 +31,13 @@ public class PatientController {
 
     @PostMapping(value="patient/addPatientMedicines")
     public void addPatientMedicines(@RequestBody PatientMedicines patientMedicines){
+    	
         patientService.addPatientMedicines(patientMedicines);
     }
 
     @PostMapping(value="patient/addPatientTest")
     public void addPatientTest(@RequestBody PatientTest patientTest){
+
         patientService.addPatientTest(patientTest);
     }
 

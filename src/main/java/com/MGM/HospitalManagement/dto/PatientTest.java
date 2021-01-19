@@ -1,6 +1,7 @@
 package com.MGM.HospitalManagement.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
@@ -8,6 +9,7 @@ import javax.persistence.Table;
 public class PatientTest {
 
 	@Id
+	@GeneratedValue
     private int pTestId;
     private String pTestConsultant;
     private int pTestStatus;

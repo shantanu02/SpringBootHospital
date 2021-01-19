@@ -1,6 +1,7 @@
 package com.MGM.HospitalManagement.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,16 +10,17 @@ import javax.persistence.Table;
 public class Doctor {
 
 	@Id
+	@GeneratedValue
     private int doctorId;
     private String doctorFName;
     private String doctorLName;
     private String doctorEmail;
     private String doctorPassword;
     private String doctorPhone;
-    private String doctorAddresss;
+    private String doctorAddress;
     private String doctorCity;
     private String doctorZipCode;
-    private String doctorState;
+    private String doctorState; 
     private String doctorGender;
     private String doctorDOB;
     private String doctorQualification;
@@ -60,11 +62,11 @@ public class Doctor {
 	public void setDoctorPhone(String doctorPhone) {
 		this.doctorPhone = doctorPhone;
 	}
-	public String getDoctorAddresss() {
-		return doctorAddresss;
+	public String getDoctorAddress() {
+		return doctorAddress;
 	}
-	public void setDoctorAddresss(String doctorAddresss) {
-		this.doctorAddresss = doctorAddresss;
+	public void setDoctorAddress(String doctorAddress) {
+		this.doctorAddress = doctorAddress;
 	}
 	public String getDoctorCity() {
 		return doctorCity;
@@ -115,7 +117,7 @@ public class Doctor {
 		this.doctorExperience = doctorExperience;
 	}
 	public Doctor(int doctorId, String doctorFName, String doctorLName, String doctorEmail, String doctorPassword,
-			String doctorPhone, String doctorAddresss, String doctorCity, String doctorZipCode, String doctorState,
+			String doctorPhone, String doctorAddress, String doctorCity, String doctorZipCode, String doctorState,
 			String doctorGender, String doctorDOB, String doctorQualification, String doctorSpecialization,
 			double doctorExperience) {
 		super();
@@ -125,7 +127,7 @@ public class Doctor {
 		this.doctorEmail = doctorEmail;
 		this.doctorPassword = doctorPassword;
 		this.doctorPhone = doctorPhone;
-		this.doctorAddresss = doctorAddresss;
+		this.doctorAddress = doctorAddress;
 		this.doctorCity = doctorCity;
 		this.doctorZipCode = doctorZipCode;
 		this.doctorState = doctorState;
@@ -143,11 +145,13 @@ public class Doctor {
 	public String toString() {
 		return "Doctor [doctorId=" + doctorId + ", doctorFName=" + doctorFName + ", doctorLName=" + doctorLName
 				+ ", doctorEmail=" + doctorEmail + ", doctorPassword=" + doctorPassword + ", doctorPhone=" + doctorPhone
-				+ ", doctorAddresss=" + doctorAddresss + ", doctorCity=" + doctorCity + ", doctorZipCode="
-				+ doctorZipCode + ", doctorState=" + doctorState + ", doctorGender=" + doctorGender + ", doctorDOB="
-				+ doctorDOB + ", doctorQualification=" + doctorQualification + ", doctorSpecialization="
-				+ doctorSpecialization + ", doctorExperience=" + doctorExperience + "]";
+				+ ", doctorAddress=" + doctorAddress + ", doctorCity=" + doctorCity + ", doctorZipCode=" + doctorZipCode
+				+ ", doctorState=" + doctorState + ", doctorGender=" + doctorGender + ", doctorDOB=" + doctorDOB
+				+ ", doctorQualification=" + doctorQualification + ", doctorSpecialization=" + doctorSpecialization
+				+ ", doctorExperience=" + doctorExperience + "]";
 	}
+
+    
 
     
 
