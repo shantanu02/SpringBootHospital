@@ -72,4 +72,10 @@ public class NurseServiceImple implements NurseService {
 		return nurse;
 	}
 
+	@Override
+	public Nurse getNurseByEmailAndPassword(String nurse_email, String nurse_password) {
+		Nurse nurse = nurseRepo.getNurseByEmailAndPassword(nurse_email, nurse_password);
+		return nurse;
+	}
+
 }

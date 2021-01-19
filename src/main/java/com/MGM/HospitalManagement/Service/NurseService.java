@@ -16,4 +16,6 @@ public interface NurseService {
 	void modifyNurse(Nurse nurse);
 	
 	Nurse getNurseByEmail(String nurse_email);
+	
+	Nurse getNurseByEmailAndPassword(String nurse_email,String nurse_password);
 }

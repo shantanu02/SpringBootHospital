@@ -14,5 +14,7 @@ public interface AdminService {
 
 	void deleteAdminInformation(int admin_id);
 	
-	AdminInformation getAdminCustom(String admin_email);
+	AdminInformation getAdminByEmail(String admin_email);
+	
+	AdminInformation getAdminByEmailAndPass(String admin_email,String admin_password);
 }

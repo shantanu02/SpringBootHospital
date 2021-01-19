@@ -2,6 +2,7 @@ package com.MGM.HospitalManagement.dto;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 public class Doctor {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
     private int doctorId;
     private String doctorFName;
     private String doctorLName;
@@ -26,6 +27,35 @@ public class Doctor {
     private String doctorQualification;
     private String doctorSpecialization;
     private double doctorExperience;
+    private String userRole = "doctor";
+	public Doctor(int doctorId, String doctorFName, String doctorLName, String doctorEmail, String doctorPassword,
+			String doctorPhone, String doctorAddress, String doctorCity, String doctorZipCode, String doctorState,
+			String doctorGender, String doctorDOB, String doctorQualification, String doctorSpecialization,
+			double doctorExperience, String userRole) {
+		super();
+		this.doctorId = doctorId;
+		this.doctorFName = doctorFName;
+		this.doctorLName = doctorLName;
+		this.doctorEmail = doctorEmail;
+		this.doctorPassword = doctorPassword;
+		this.doctorPhone = doctorPhone;
+		this.doctorAddress = doctorAddress;
+		this.doctorCity = doctorCity;
+		this.doctorZipCode = doctorZipCode;
+		this.doctorState = doctorState;
+		this.doctorGender = doctorGender;
+		this.doctorDOB = doctorDOB;
+		this.doctorQualification = doctorQualification;
+		this.doctorSpecialization = doctorSpecialization;
+		this.doctorExperience = doctorExperience;
+		this.userRole = userRole;
+	}
+	public String getUserRole() {
+		return userRole;
+	}
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
+	}
 	public int getDoctorId() {
 		return doctorId;
 	}
@@ -116,27 +146,7 @@ public class Doctor {
 	public void setDoctorExperience(double doctorExperience) {
 		this.doctorExperience = doctorExperience;
 	}
-	public Doctor(int doctorId, String doctorFName, String doctorLName, String doctorEmail, String doctorPassword,
-			String doctorPhone, String doctorAddress, String doctorCity, String doctorZipCode, String doctorState,
-			String doctorGender, String doctorDOB, String doctorQualification, String doctorSpecialization,
-			double doctorExperience) {
-		super();
-		this.doctorId = doctorId;
-		this.doctorFName = doctorFName;
-		this.doctorLName = doctorLName;
-		this.doctorEmail = doctorEmail;
-		this.doctorPassword = doctorPassword;
-		this.doctorPhone = doctorPhone;
-		this.doctorAddress = doctorAddress;
-		this.doctorCity = doctorCity;
-		this.doctorZipCode = doctorZipCode;
-		this.doctorState = doctorState;
-		this.doctorGender = doctorGender;
-		this.doctorDOB = doctorDOB;
-		this.doctorQualification = doctorQualification;
-		this.doctorSpecialization = doctorSpecialization;
-		this.doctorExperience = doctorExperience;
-	}
+	
 	public Doctor() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -148,7 +158,7 @@ public class Doctor {
 				+ ", doctorAddress=" + doctorAddress + ", doctorCity=" + doctorCity + ", doctorZipCode=" + doctorZipCode
 				+ ", doctorState=" + doctorState + ", doctorGender=" + doctorGender + ", doctorDOB=" + doctorDOB
 				+ ", doctorQualification=" + doctorQualification + ", doctorSpecialization=" + doctorSpecialization
-				+ ", doctorExperience=" + doctorExperience + "]";
+				+ ", doctorExperience=" + doctorExperience + ", userRole=" + userRole + "]";
 	}
 
     

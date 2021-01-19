@@ -22,9 +22,9 @@ public class ManagementController {
 	ManagementService managementService;
 	
 	@PostMapping(value = "mgmt/addMgmt")
-	public void addManagement(@RequestBody ManagementInformation managementInformation)
+	public int addManagement(@RequestBody ManagementInformation managementInformation)
 	{
-		managementService.addManagement(managementInformation);
+		return managementService.addManagement(managementInformation);
 	}
 	
 	@DeleteMapping(value = "mgmt/deleteMgmt/{management_id}")

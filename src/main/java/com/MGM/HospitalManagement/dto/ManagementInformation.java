@@ -2,6 +2,7 @@ package com.MGM.HospitalManagement.dto;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,13 +12,14 @@ import javax.persistence.Table;
 public class ManagementInformation {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int management_id;
 	private String management_fname;
 	private String management_lname;
 	private String management_email;
 	private String management_password;
 	private String management_phone;
+	private String userRole = "mgmt";
 	public int getManagement_id() {
 		return management_id;
 	}
@@ -54,8 +56,9 @@ public class ManagementInformation {
 	public void setManagement_phone(String management_phone) {
 		this.management_phone = management_phone;
 	}
+	
 	public ManagementInformation(int management_id, String management_fname, String management_lname,
-			String management_email, String management_password, String management_phone) {
+			String management_email, String management_password, String management_phone, String userRole) {
 		super();
 		this.management_id = management_id;
 		this.management_fname = management_fname;
@@ -63,6 +66,13 @@ public class ManagementInformation {
 		this.management_email = management_email;
 		this.management_password = management_password;
 		this.management_phone = management_phone;
+		this.userRole = userRole;
+	}
+	public String getUserRole() {
+		return userRole;
+	}
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
 	}
 	public ManagementInformation() {
 		super();
@@ -72,7 +82,8 @@ public class ManagementInformation {
 	public String toString() {
 		return "ManagementInformation [management_id=" + management_id + ", management_fname=" + management_fname
 				+ ", management_lname=" + management_lname + ", management_email=" + management_email
-				+ ", management_password=" + management_password + ", management_phone=" + management_phone + "]";
+				+ ", management_password=" + management_password + ", management_phone=" + management_phone
+				+ ", userRole=" + userRole + "]";
 	}
 	
 	

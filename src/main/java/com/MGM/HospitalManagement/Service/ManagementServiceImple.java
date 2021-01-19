@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.MGM.HospitalManagement.Repo.ManagementInformationRepo;
 import com.MGM.HospitalManagement.dto.ManagementInformation;
 
@@ -18,8 +16,18 @@ public class ManagementServiceImple implements ManagementService {
 	ManagementInformationRepo managementInformationRepo;
 	
 	@Override
-	public void addManagement(ManagementInformation managementInformation) {
-		managementInformationRepo.save(managementInformation);
+	public int addManagement(ManagementInformation managementInformation) {
+		
+		ManagementInformation management = getManagementByEmail(managementInformation.getManagement_email());
+		if(management == null)
+		{
+			managementInformationRepo.save(managementInformation);
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
 	}
 
 	@Override
@@ -49,6 +57,18 @@ public class ManagementServiceImple implements ManagementService {
 	@Override
 	public void modifyManagementInformation(ManagementInformation managementInformation) {
 		managementInformationRepo.save(managementInformation);
+	}
+
+	@Override
+	public ManagementInformation getManagementByEmail(String management_email) {
+		ManagementInformation management =  managementInformationRepo.getManagementByEmail(management_email);
+		return management;
+	}
+
+	@Override
+	public ManagementInformation getManagementByEmailAndPassword(String management_email, String management_password) {
+		ManagementInformation managementInformation = managementInformationRepo.getManagementByEmailAndPassword(management_email, management_password);
+		return managementInformation;
 	}
 
 	

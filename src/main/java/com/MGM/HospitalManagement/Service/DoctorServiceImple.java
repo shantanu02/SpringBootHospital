@@ -22,6 +22,7 @@ public class DoctorServiceImple  implements DoctorService{
 	@Override
 	public int addDoctor(Doctor doctor) {
 		Doctor doctorPresent = getDoctorByEmail(doctor.getDoctorEmail());
+		
 		if(doctorPresent == null)
 		{
 			doctorRepo.save(doctor);
@@ -57,19 +58,23 @@ public class DoctorServiceImple  implements DoctorService{
 	@Override
 	public void deleteDoctor(int doctor_id) {
 		doctorRepo.deleteById(doctor_id);
-		
 	}
-
+	
 	@Override
 	public void modifyDoctor(Doctor doctor) {
-		 doctorRepo.save(doctor);
-		
-		
+		 doctorRepo.save(doctor);		
 	}
 
 	@Override
 	public Doctor getDoctorByEmail(String doctor_email) {
 		Doctor doctor =  doctorRepo.getDoctorByEmail(doctor_email);
+		return doctor;
+	}
+
+	
+	@Override
+	public Doctor getDoctorByEmailAndPassword(String doctor_email, String doctor_password) {
+		Doctor doctor =  doctorRepo.getDoctorByEmailAndPassword(doctor_email, doctor_password);
 		return doctor;
 	}
 
