@@ -5,6 +5,7 @@ public class UserLogin {
 	private String userEmail;
 	private String userPassword;
 	private String userRole;
+
 	public String getUserEmail() {
 		return userEmail;
 	}

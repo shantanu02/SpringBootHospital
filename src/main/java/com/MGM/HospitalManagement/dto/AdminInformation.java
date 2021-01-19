@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class AdminInformation {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int admin_id;
 	private String admin_fname;
 	private String admin_lname;

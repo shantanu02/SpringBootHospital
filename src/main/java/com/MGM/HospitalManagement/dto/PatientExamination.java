@@ -1,15 +1,12 @@
 package com.MGM.HospitalManagement.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "PatientExamination")
 public class PatientExamination {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int peId;
     private String peDateTime;
     private String peHead;

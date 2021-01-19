@@ -246,9 +246,24 @@ public class PatientServiceImple implements PatientService {
 	}
 
 	@Override
+
 	public PatientInformation getPatientByEmailAndPassword(String patient_email, String patient_password) {
 	PatientInformation patient_information = patientInformationRepo.getPatientByEmailAndPasswor(patient_email, patient_password); 
 		return patient_information;
+
+	public List<PatientTreatment> getAllPatientTreatmentByPeId(int peId) {
+		return patientTreatmentRepo.getPatientTreatmentByPeId(peId);
+	}
+
+	@Override
+	public List<PatientMedicines> getAllPatientMedicinesByPtId(int ptId) {
+		return patientMedicinesRepo.getPatientMedicinesByPtId(ptId);
+	}
+
+	@Override
+	public List<PatientTest> getAllPatientTestByPtId(int ptId) {
+		return patientTestRepo.getPatientTestByPtId(ptId);
+
 	}
 
 }
