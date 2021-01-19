@@ -25,9 +25,9 @@ public class NurseController {
 	NurseService nurseService;
 	
 	@PostMapping(value = "nurse/addNurse") 
-	public void addNurse(@RequestBody Nurse nurse)
+	public int addNurse(@RequestBody Nurse nurse)
 	{
-		nurseService.addNurse(nurse);
+		return  nurseService.addNurse(nurse);
 	}
 	
 	@GetMapping(value = "nurse/getAllNurse")

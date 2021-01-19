@@ -17,8 +17,18 @@ public class AdminServiceImple implements AdminService {
 	AdminRepo adminRepo;
 
 	@Override
-	public void addAdmin(AdminInformation adminInformation) {
-		adminRepo.save(adminInformation);
+	public int addAdmin(AdminInformation adminInformation) {
+
+		AdminInformation admin = getAdminCustom(adminInformation.getAdmin_email());
+		if(admin == null)
+		{
+			adminRepo.save(adminInformation);
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
 
 	}
 
@@ -46,5 +56,13 @@ public class AdminServiceImple implements AdminService {
 
 		return resultList;
 	}
+
+	@Override
+	public AdminInformation getAdminCustom(String admin_email) {
+		AdminInformation adminPresent =  adminRepo.getAdminByEmail(admin_email);
+		return adminPresent;
+	}
+
+	
 
 }

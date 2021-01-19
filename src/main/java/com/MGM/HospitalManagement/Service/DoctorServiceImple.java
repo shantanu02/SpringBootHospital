@@ -20,8 +20,18 @@ public class DoctorServiceImple  implements DoctorService{
 	DoctorRepo doctorRepo;
 	
 	@Override
-	public void addDoctor(Doctor doctor) {
-		doctorRepo.save(doctor);
+	public int addDoctor(Doctor doctor) {
+		Doctor doctorPresent = getDoctorByEmail(doctor.getDoctorEmail());
+		if(doctorPresent == null)
+		{
+			doctorRepo.save(doctor);
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+		
 		
 	}
 
@@ -55,6 +65,12 @@ public class DoctorServiceImple  implements DoctorService{
 		 doctorRepo.save(doctor);
 		
 		
+	}
+
+	@Override
+	public Doctor getDoctorByEmail(String doctor_email) {
+		Doctor doctor =  doctorRepo.getDoctorByEmail(doctor_email);
+		return doctor;
 	}
 
 }

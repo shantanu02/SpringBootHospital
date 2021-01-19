@@ -6,7 +6,7 @@ import com.MGM.HospitalManagement.dto.Doctor;
 
 public interface DoctorService {
 
-	void addDoctor(Doctor doctor);
+	int addDoctor(Doctor doctor);
 
 	Doctor getDoctor(int doctor_id);
 
@@ -15,4 +15,6 @@ public interface DoctorService {
 	void deleteDoctor(int doctor_id);
 	
 	void modifyDoctor(Doctor doctor);
+	
+	Doctor getDoctorByEmail(String doctor_email);
 }
