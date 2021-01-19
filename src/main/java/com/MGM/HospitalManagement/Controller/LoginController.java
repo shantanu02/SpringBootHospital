@@ -10,10 +10,12 @@ import com.MGM.HospitalManagement.Service.AdminService;
 import com.MGM.HospitalManagement.Service.DoctorService;
 import com.MGM.HospitalManagement.Service.ManagementService;
 import com.MGM.HospitalManagement.Service.NurseService;
+import com.MGM.HospitalManagement.Service.PatientService;
 import com.MGM.HospitalManagement.dto.AdminInformation;
 import com.MGM.HospitalManagement.dto.Doctor;
 import com.MGM.HospitalManagement.dto.ManagementInformation;
 import com.MGM.HospitalManagement.dto.Nurse;
+import com.MGM.HospitalManagement.dto.PatientInformation;
 import com.MGM.HospitalManagement.dto.UserLogin;
 
 @RestController
@@ -32,6 +34,9 @@ public class LoginController {
 	@Autowired
 	NurseService nurseService;
 	
+	@Autowired
+	PatientService patientService;
+	
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping(value = "/userLogin")
 	public UserLogin checkUserEmail(@RequestBody UserLogin userLogin)
@@ -48,6 +53,8 @@ public class LoginController {
 		ManagementInformation mgmt = managementService.getManagementByEmailAndPassword(user_email, user_password);
 		
 		Nurse nurse = nurseService.getNurseByEmailAndPassword(user_email, user_password);
+		
+		PatientInformation patientInformation = patientService.getPatientByEmailAndPassword(user_email, user_password);
 		
 		if(adminInformation != null )
 		{
@@ -75,6 +82,13 @@ public class LoginController {
 			user.setUserEmail(nurse.getNurseEmail());
 			user.setUserPassword(nurse.getNursePassword());
 			user.setUserRole("Nurse");
+			return user;
+		}
+		if(patientInformation != null)
+		{
+			user.setUserEmail(patientInformation.getPatientEmail());
+			user.setUserPassword(patientInformation.getPatientPassword());
+			user.setUserRole("patient");
 			return user;
 		}
 		else

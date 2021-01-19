@@ -21,4 +21,6 @@ public interface PatientInformationRepo extends JpaRepository<PatientInformation
     @Query(value="select * from patient_information where doctor_Id = ?1  ",nativeQuery=true)
     public List<PatientInformation> getPatientInformationByDoctorId(int doctorId);
 
+    @Query(value="select * from patient_information where patient_email =?1 and patient_password = ?2",nativeQuery=true)
+    public PatientInformation getPatientByEmailAndPasswor(String patientEmail,String patientPassword);
 }
