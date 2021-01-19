@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class ManagementInformation {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int management_id;
 	private String management_fname;
 	private String management_lname;
