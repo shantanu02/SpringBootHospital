@@ -22,15 +22,15 @@ public class AdminController {
 	AdminService adminService;
 	
 	@PostMapping(value = "admin/addAdmin")
-	public void addAdmin(@RequestBody AdminInformation adminInformation)
+	public int addAdmin(@RequestBody AdminInformation adminInformation)
 	{
-		adminService.addAdmin(adminInformation);
+		return adminService.addAdmin(adminInformation);
 	}
 	
 	@GetMapping(value = "admin/getAdmin/{admin_id}")
-	public void getAdmin(@PathVariable int admin_id)
+	public AdminInformation getAdmin(@PathVariable int admin_id)
 	{
-		adminService.getAdminInformation(admin_id);
+		return adminService.getAdminInformation(admin_id);
 	}
 	
 	@GetMapping(value = "admin/getAllAdmin")
@@ -45,5 +45,7 @@ public class AdminController {
 	{
 		adminService.deleteAdminInformation(admin_id);
 	}
+	
+	
 	
 }

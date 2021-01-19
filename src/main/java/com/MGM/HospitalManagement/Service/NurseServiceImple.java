@@ -21,8 +21,18 @@ public class NurseServiceImple implements NurseService {
 	
 	
 	@Override
-	public void addNurse(Nurse nurse) {
-		nurseRepo.save(nurse);
+	public int addNurse(Nurse nurse) {
+		Nurse objNurse = getNurseByEmail(nurse.getNurseEmail());
+		if(objNurse == null)
+		{
+			nurseRepo.save(nurse);
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+		
 	}
 
 	@Override
@@ -54,6 +64,12 @@ public class NurseServiceImple implements NurseService {
 	public void modifyNurse(Nurse nurse) {
 		nurseRepo.save(nurse);
 		
+	}
+
+	@Override
+	public Nurse getNurseByEmail(String nurse_email) {
+		Nurse nurse = nurseRepo.getNurseByEmail(nurse_email);
+		return nurse;
 	}
 
 }

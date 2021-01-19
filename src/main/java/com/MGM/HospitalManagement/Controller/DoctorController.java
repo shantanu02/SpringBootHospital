@@ -24,9 +24,9 @@ public class DoctorController {
 	DoctorService doctorService;
 	
 	@PostMapping(value = "doctor/addDoctor")
-	public void addDoctor(@RequestBody Doctor doctor)
+	public int addDoctor(@RequestBody Doctor doctor)
 	{
-		doctorService.addDoctor(doctor);
+		return doctorService.addDoctor(doctor);
 	}
 	
 	
