@@ -1,6 +1,7 @@
 package com.MGM.HospitalManagement.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +11,7 @@ import javax.persistence.Table;
 public class ManagementInformation {
 
 	@Id
+	@GeneratedValue
 	private int management_id;
 	private String management_fname;
 	private String management_lname;
