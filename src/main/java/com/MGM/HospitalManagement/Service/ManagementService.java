@@ -7,7 +7,7 @@ import com.MGM.HospitalManagement.dto.ManagementInformation;
 
 public interface ManagementService {
 
-	void addManagement(ManagementInformation managementInformation);
+	int addManagement(ManagementInformation managementInformation);
 
 	ManagementInformation getManagementInformation(int management_id);
 
@@ -16,4 +16,8 @@ public interface ManagementService {
 	void deleteManagementInformation(int management_id);
 	
 	void modifyManagementInformation(ManagementInformation managementInformation);
+	
+	ManagementInformation getManagementByEmail(String management_email);
+	
+	ManagementInformation getManagementByEmailAndPassword(String management_email,String management_password);
 }

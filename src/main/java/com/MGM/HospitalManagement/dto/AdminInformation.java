@@ -4,19 +4,21 @@ import javax.persistence.Table;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity(name = "AdminInformation")
 public class AdminInformation {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int admin_id;
 	private String admin_fname;
 	private String admin_lname;
 	private String admin_email;
 	private String admin_password;
 	private String admin_phone;
+	private String userRole = "admin";
 	public int getAdmin_id() {
 		return admin_id;
 	}

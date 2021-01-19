@@ -17,4 +17,7 @@ public interface DoctorService {
 	void modifyDoctor(Doctor doctor);
 	
 	Doctor getDoctorByEmail(String doctor_email);
+	
+	Doctor getDoctorByEmailAndPassword(String doctor_email,String doctor_password);
+	
 }

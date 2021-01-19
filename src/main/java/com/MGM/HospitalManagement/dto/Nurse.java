@@ -24,6 +24,7 @@ public class Nurse {
     private String nurseDOB;
     private String nurseQualification;
     private double nurseExperience;
+    private String userRole = "nurse";
 	public int getNurseId() {
 		return nurseId;
 	}
@@ -108,9 +109,29 @@ public class Nurse {
 	public void setNurseExperience(double nurseExperience) {
 		this.nurseExperience = nurseExperience;
 	}
+	
+	public Nurse() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "Nurse [nurseId=" + nurseId + ", nurseFName=" + nurseFName + ", nurseLName=" + nurseLName
+				+ ", nurseEmail=" + nurseEmail + ", nursePassword=" + nursePassword + ", nursePhone=" + nursePhone
+				+ ", nurseAddress=" + nurseAddress + ", nurseCity=" + nurseCity + ", nurseZipCode=" + nurseZipCode
+				+ ", nurseState=" + nurseState + ", nurseGender=" + nurseGender + ", nurseDOB=" + nurseDOB
+				+ ", nurseQualification=" + nurseQualification + ", nurseExperience=" + nurseExperience + ", userRole="
+				+ userRole + "]";
+	}
+	public String getUserRole() {
+		return userRole;
+	}
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
+	}
 	public Nurse(int nurseId, String nurseFName, String nurseLName, String nurseEmail, String nursePassword,
 			String nursePhone, String nurseAddress, String nurseCity, String nurseZipCode, String nurseState,
-			String nurseGender, String nurseDOB, String nurseQualification, double nurseExperience) {
+			String nurseGender, String nurseDOB, String nurseQualification, double nurseExperience, String userRole) {
 		super();
 		this.nurseId = nurseId;
 		this.nurseFName = nurseFName;
@@ -126,11 +147,9 @@ public class Nurse {
 		this.nurseDOB = nurseDOB;
 		this.nurseQualification = nurseQualification;
 		this.nurseExperience = nurseExperience;
+		this.userRole = userRole;
 	}
-	public Nurse() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
     
 	
     
