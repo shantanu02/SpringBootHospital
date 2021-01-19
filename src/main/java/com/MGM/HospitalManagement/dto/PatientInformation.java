@@ -38,7 +38,13 @@ public class PatientInformation {
     private String patientIPD;
     private String patientWard;
     private String patientBedNo;
-    
+    public String getUserRole() {
+		return userRole;
+	}
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
+	}
+	private String userRole = "patient";
     private int doctorId;
     private int nurseId;
 
@@ -198,12 +204,13 @@ public class PatientInformation {
 	public void setNurseId(int nurseId) {
 		this.nurseId = nurseId;
 	}
+	
 	public PatientInformation(int patientId, String patientFName, String patientLName, String patientEmail,
 			String patientPassword, String patientAddress, String patientTempAddress, String patientCity,
 			String patientZipCode, String patientState, String patientGender, String patientDOB, String patientPhone,
 			double patientWeight, String patientTriage, String patientLMP, String patientComplaint,
 			String patientAllergies, String patientMedicalHistory, String patientSID, String patientOPD,
-			String patientIPD, String patientWard, String patientBedNo, int doctorId, int nurseId) {
+			String patientIPD, String patientWard, String patientBedNo, String userRole, int doctorId, int nurseId) {
 		super();
 		this.patientId = patientId;
 		this.patientFName = patientFName;
@@ -229,6 +236,7 @@ public class PatientInformation {
 		this.patientIPD = patientIPD;
 		this.patientWard = patientWard;
 		this.patientBedNo = patientBedNo;
+		this.userRole = userRole;
 		this.doctorId = doctorId;
 		this.nurseId = nurseId;
 	}
@@ -247,7 +255,7 @@ public class PatientInformation {
 				+ ", patientComplaint=" + patientComplaint + ", patientAllergies=" + patientAllergies
 				+ ", patientMedicalHistory=" + patientMedicalHistory + ", patientSID=" + patientSID + ", patientOPD="
 				+ patientOPD + ", patientIPD=" + patientIPD + ", patientWard=" + patientWard + ", patientBedNo="
-				+ patientBedNo + ", doctorId=" + doctorId + ", nurseId=" + nurseId + "]";
+				+ patientBedNo + ", userRole=" + userRole + ", doctorId=" + doctorId + ", nurseId=" + nurseId + "]";
 	}
     
     
