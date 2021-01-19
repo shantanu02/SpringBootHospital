@@ -25,29 +25,41 @@ public class PatientServiceImple implements PatientService {
 	PatientTestRepo patientTestRepo;
 
 	@Override
-	public void addPatientInformation(PatientInformation patientInformation) {
-		patientInformationRepo.save(patientInformation);
-		
+	public int addPatientInformation(PatientInformation patientInformation) {
+
+		PatientInformation p = patientInformationRepo.findPatientByEmail(patientInformation.getPatientEmail());
+
+		if(p == null){
+			patientInformationRepo.save(patientInformation);
+			return 1;
+		}else{
+			return 0;
+		}
+
 	}
 
 	@Override
-	public void addPatientTreatment(PatientTreatment patientTreatement) {
+	public int addPatientTreatment(PatientTreatment patientTreatement) {
 		patientTreatmentRepo.save(patientTreatement);
+		return 0;
 	}
 
 	@Override
-	public void addPatientExamination(PatientExamination patientExamination) {
+	public int addPatientExamination(PatientExamination patientExamination) {
 		patientExaminationRepo.save(patientExamination);
+		return 0;
 	}
 
 	@Override
-	public void addPatientMedicines(PatientMedicines patientMedicines) {
+	public int addPatientMedicines(PatientMedicines patientMedicines) {
 		patientMedicinesRepo.save(patientMedicines);
+		return 0;
 	}
 
 	@Override
-	public void addPatientTest(PatientTest patientTest) {
+	public int addPatientTest(PatientTest patientTest) {
 		patientTestRepo.save(patientTest);
+		return 0;
 	}
 
 	@Override
@@ -149,59 +161,88 @@ public class PatientServiceImple implements PatientService {
 	}
 
 	@Override
-	public void deletePatientInformation(int patientId) {
-		patientInformationRepo.deleteById(patientId);
+	public int deletePatientInformation(int patientId) {
+
+		PatientInformation p = patientInformationRepo.findPatientById(patientId);
+		if(p==null){
+			return 1;
+		}else{
+			patientInformationRepo.deleteById(patientId);
+			return 0;
+		}
+
+
 	}
 
 	@Override
-	public void deletePatientTreatment(int ptId) {
+	public int deletePatientTreatment(int ptId) {
 		patientInformationRepo.deleteById(ptId);
+		return ptId;
 	}
 
 	@Override
-	public void deletePatientMedicines(int pmId) {
+	public int deletePatientMedicines(int pmId) {
 		patientMedicinesRepo.deleteById(pmId);
+		return pmId;
 	}
 
 	@Override
-	public void deletePatientExamination(int peId) {
+	public int deletePatientExamination(int peId) {
 		patientExaminationRepo.deleteById(peId);
+		return peId;
 	}
 
 	@Override
-	public void deletePatientTest(int pTestId) {
+	public int deletePatientTest(int pTestId) {
 		patientTestRepo.deleteById(pTestId);
+		return pTestId;
 	}
 
 	@Override
-	public void updatePatientInformation(PatientInformation patientInformation) {
+	public int updatePatientInformation(PatientInformation patientInformation) {
 		patientInformationRepo.save(patientInformation);
-		return ;
+		return 0;
 	}
 
 	@Override
-	public void updatePatientTreatment(PatientTreatment patientTreatement) {
+	public int updatePatientTreatment(PatientTreatment patientTreatement) {
 		patientTreatmentRepo.save(patientTreatement);
-		return;
+		return 0;
 	}
 
 
 	@Override
-	public void updatePatientExamination(PatientExamination patientExamination) {
+	public int updatePatientExamination(PatientExamination patientExamination) {
 		patientExaminationRepo.save(patientExamination);
-		return ;
+		return 0;
 	}
 
 	@Override
-	public void updatePatientMedicines(PatientMedicines patientMedicines) {
+	public int updatePatientMedicines(PatientMedicines patientMedicines) {
 		patientMedicinesRepo.save(patientMedicines);
-		return ;
+		return 0;
 	}
 
 	@Override
-	public void updatePatientTest(PatientTest patientTest) {
+	public int updatePatientTest(PatientTest patientTest) {
 		patientTestRepo.save(patientTest);
-		return ;
+		return 0;
+	}
+
+	@Override
+	public List<PatientExamination> getAllPatientExaminationByPatientId(int patientId) {
+		List<PatientExamination> examineList = patientExaminationRepo.getPatientExaminationByPatientId(patientId);
+		return examineList;
+	}
+
+	@Override
+	public List<PatientInformation> getAllPatientInformationByNurseId(int nurseId) {
+		return patientInformationRepo.getPatientInformationByNurseId(nurseId);
+	}
+
+	@Override
+	public List<PatientInformation> getAllPatientInformationByDoctorId(int doctorId) {
+		return patientInformationRepo.getPatientInformationByDoctorId(doctorId);
 	}
 
 }

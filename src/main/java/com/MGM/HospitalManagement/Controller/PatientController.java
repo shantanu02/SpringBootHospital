@@ -14,9 +14,12 @@ public class PatientController {
     @Autowired
     private PatientService patientService;
 
+
+
     @PostMapping(value="patient/addPatientInformation")
-    public void addPatientInformation(@RequestBody PatientInformation patientInformation){
-        patientService.addPatientInformation(patientInformation);
+    public int addPatientInformation(@RequestBody PatientInformation patientInformation){
+        int i = patientService.addPatientInformation(patientInformation);
+        return i ;
     }
 
     @PostMapping(value="patient/addPatientExamination")
@@ -140,4 +143,12 @@ public class PatientController {
     public List<PatientTest> getAllPatientTest(){
         return patientService.getAllPatientTest();
     }
+
+    @GetMapping(value="patient/getPatientExaminationByPatientId/{patientId}")
+    public List<PatientExamination> getPatientExaminationByPatientId(@PathVariable int patientId){
+        return patientService.getAllPatientExaminationByPatientId(patientId);
+    }
+
+
+
 }

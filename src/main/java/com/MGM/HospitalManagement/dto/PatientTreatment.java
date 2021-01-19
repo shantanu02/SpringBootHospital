@@ -1,6 +1,7 @@
 package com.MGM.HospitalManagement.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,11 +10,21 @@ import javax.persistence.Table;
 public class PatientTreatment {
 
 	@Id
+	@GeneratedValue
     private int ptId;
     private String ptNurseNote;
     private String ptMDNote;
     private String ptDoctorNote;
     private String ptOthers;
+	private int peId;
+	public int getPeId() {
+		return peId;
+	}
+
+	public void setPeId(int peId) {
+		this.peId = peId;
+	}
+
 
 
 	public int getPtId() {
@@ -46,13 +57,14 @@ public class PatientTreatment {
 	public void setPtOthers(String ptOthers) {
 		this.ptOthers = ptOthers;
 	}
-	public PatientTreatment(int ptId, String ptNurseNote, String ptMDNote, String ptDoctorNote, String ptOthers) {
+	public PatientTreatment(int ptId, String ptNurseNote, String ptMDNote, String ptDoctorNote, String ptOthers,int peId) {
 		super();
 		this.ptId = ptId;
 		this.ptNurseNote = ptNurseNote;
 		this.ptMDNote = ptMDNote;
 		this.ptDoctorNote = ptDoctorNote;
 		this.ptOthers = ptOthers;
+		this.peId = peId;
 	}
 	public PatientTreatment() {
 		super();

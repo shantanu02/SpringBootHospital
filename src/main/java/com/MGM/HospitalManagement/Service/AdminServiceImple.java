@@ -6,10 +6,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.MGM.HospitalManagement.Repo.AdminRepo;
 import com.MGM.HospitalManagement.dto.AdminInformation;
+import org.springframework.stereotype.Service;
+
 @Service
 public class AdminServiceImple implements AdminService {
 
