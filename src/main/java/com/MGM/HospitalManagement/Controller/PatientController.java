@@ -149,6 +149,31 @@ public class PatientController {
         return patientService.getAllPatientExaminationByPatientId(patientId);
     }
 
+    @GetMapping(value="patient/getPatientInformationByNurseId/{nurseId}")
+    public List<PatientInformation> getPatientInformatioinByNurseId(@PathVariable int nurseId){
+        return patientService.getAllPatientInformationByNurseId(nurseId);
+    }
+
+    @GetMapping(value="patient/getPatientInformationByDoctorId/{doctoeId}")
+    public List<PatientInformation> getPatientInformatioinByDoctorId(@PathVariable int doctorId){
+        return patientService.getAllPatientInformationByDoctorId(doctorId);
+    }
+
+    @GetMapping(value="patient/getPatientTreatmentByPeId/{peId}")
+    public List<PatientTreatment> getPatientTreatmentByPeId(@PathVariable int peId){
+        return patientService.getAllPatientTreatmentByPeId(peId);
+    }
+
+    @GetMapping(value="patient/getPatientMedicinesByPtId/{ptId}")
+    public List<PatientMedicines> getPatientMedicinesByPtId(@PathVariable int ptId){
+        return patientService.getAllPatientMedicinesByPtId(ptId);
+    }
+
+    @GetMapping(value="patient/getPatientTestByPtId/{ptId}")
+    public List<PatientTest> getPatientTestByPtId(@PathVariable int ptId){
+        return patientService.getAllPatientTestByPtId(ptId);
+    }
+
 
 
 }
