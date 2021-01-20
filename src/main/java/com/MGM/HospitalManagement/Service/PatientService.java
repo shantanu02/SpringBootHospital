@@ -5,15 +5,16 @@ import java.util.List;
 import com.MGM.HospitalManagement.dto.*;
 
 public interface PatientService {
-	void addPatientInformation(PatientInformation patientInformation);
 
-	void addPatientTreatment(PatientTreatment patientTreatement);
+	int addPatientInformation(PatientInformation patientInformation);
 
-	void addPatientExamination(PatientExamination patientExamination);
+	int addPatientTreatment(PatientTreatment patientTreatement);
 
-	void addPatientMedicines(PatientMedicines patientMedicines);
+	int addPatientExamination(PatientExamination patientExamination);
 
-	void addPatientTest(PatientTest patientTest);
+	int addPatientMedicines(PatientMedicines patientMedicines);
+
+	int addPatientTest(PatientTest patientTest);
 
 	PatientInformation getPatientInformation(int patientId);
 
@@ -35,25 +36,29 @@ public interface PatientService {
 
 	List<PatientTest> getAllPatientTest();
 
-	void deletePatientInformation(int patientId);
+	int deletePatientInformation(int patientId);
 
-	void deletePatientTreatment(int ptId);
+	int deletePatientTreatment(int ptId);
 
-	void deletePatientMedicines(int pmId);
+	int deletePatientMedicines(int pmId);
 
-	void deletePatientExamination(int peId);
+	int deletePatientExamination(int peId);
 
-	void deletePatientTest(int pTestId);
+	int deletePatientTest(int pTestId);
 
-	void updatePatientInformation(PatientInformation patientInformation);
+	int updatePatientInformation(PatientInformation patientInformation);
 
-	void updatePatientTreatment(PatientTreatment patientTreatement);
+	int updatePatientTreatment(PatientTreatment patientTreatement);
 
-	void updatePatientExamination(PatientExamination patientExamination);
+	int updatePatientExamination(PatientExamination patientExamination);
 
-	void updatePatientMedicines(PatientMedicines patientMedicines);
+	int updatePatientMedicines(PatientMedicines patientMedicines);
 
-	void updatePatientTest(PatientTest patientTest);
+	int updatePatientTest(PatientTest patientTest);
 
+	List<PatientExamination> getAllPatientExaminationByPatientId(int patientId);
 
+	List<PatientInformation> getAllPatientInformationByNurseId(int nurseId);
+
+	List<PatientInformation> getAllPatientInformationByDoctorId(int doctorId);
 }

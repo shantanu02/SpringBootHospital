@@ -1,6 +1,7 @@
 package com.MGM.HospitalManagement.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -8,6 +9,7 @@ import javax.persistence.Table;
 @Table(name = "PatientExamination")
 public class PatientExamination {
 	@Id
+	@GeneratedValue
     private int peId;
     private String peDateTime;
     private String peHead;
@@ -25,6 +27,16 @@ public class PatientExamination {
     private String peTemp;
     private String pePulseOx;
     private String peFSBS;
+
+	public int getPatientId() {
+		return patientId;
+	}
+
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
+	}
+
+	private int patientId;
 	public int getPeId() {
 		return peId;
 	}
@@ -129,7 +141,7 @@ public class PatientExamination {
 	}
 	public PatientExamination(int peId, String peDateTime, String peHead, String peNeck, String peChest, String peBack,
 			String peHeart, String peNeuro, String peAbdomen, String peExtermities, String peOthers, String pePulse,
-			String peResp, String peBp, String peTemp, String pePulseOx, String peFSBS) {
+			String peResp, String peBp, String peTemp, String pePulseOx, String peFSBS,int patientId) {
 		super();
 		this.peId = peId;
 		this.peDateTime = peDateTime;
@@ -148,6 +160,7 @@ public class PatientExamination {
 		this.peTemp = peTemp;
 		this.pePulseOx = pePulseOx;
 		this.peFSBS = peFSBS;
+		this.patientId = patientId;
 	}
 	public PatientExamination() {
 		super();

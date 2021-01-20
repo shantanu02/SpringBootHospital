@@ -1,6 +1,7 @@
 package com.MGM.HospitalManagement.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -8,7 +9,8 @@ import javax.persistence.Table;
 @Table(name = "Medicines")
 public class Medicines {
 
-	@Id 
+	@Id
+	@GeneratedValue
     private int medicineId;
     private String medicineName;
     private String medicineDesc;
