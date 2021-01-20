@@ -44,6 +44,13 @@ public class ManagementController {
 	{
 		managementService.modifyManagementInformation(managementInformation);
 	}
+	
+	@GetMapping(value = "mgmt/getMgmtByEmail/{management_email}")
+	public ManagementInformation getManagementByEmail(@PathVariable String management_email)
+	{
+		return managementService.getManagementByEmail(management_email);
+	}
+	
 }
 
 

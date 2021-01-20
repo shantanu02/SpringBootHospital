@@ -62,12 +62,14 @@ public class ManagementServiceImple implements ManagementService {
 	@Override
 	public ManagementInformation getManagementByEmail(String management_email) {
 		ManagementInformation management =  managementInformationRepo.getManagementByEmail(management_email);
+		//System.out.println(management.toString());
 		return management;
 	}
 
 	@Override
 	public ManagementInformation getManagementByEmailAndPassword(String management_email, String management_password) {
 		ManagementInformation managementInformation = managementInformationRepo.getManagementByEmailAndPassword(management_email, management_password);
+		
 		return managementInformation;
 	}
 

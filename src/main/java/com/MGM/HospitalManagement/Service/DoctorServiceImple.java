@@ -32,8 +32,6 @@ public class DoctorServiceImple  implements DoctorService{
 		{
 			return 0;
 		}
-		
-		
 	}
 
 	@Override
