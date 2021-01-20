@@ -13,4 +13,6 @@ public interface ManagementInformationRepo extends JpaRepository<ManagementInfor
 	
 	@Query(value = "select * from management_information mgmt where mgmt.management_email=?1 and mgmt.management_password=?2",nativeQuery = true)
 	public ManagementInformation getManagementByEmailAndPassword(String mgmt_email,String mgmt_password);
+
+	
 }
