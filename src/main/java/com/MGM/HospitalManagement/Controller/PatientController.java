@@ -120,7 +120,7 @@ public class PatientController {
     public PatientTest getPatientTest(@PathVariable int pTestId) {
         return patientService.getPatientTest(pTestId);
     }
-
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(value="patient/getAllPatientInformation")
     public List<PatientInformation> getAllPatientInformation(){
         return patientService.getAllPatientInformation();
@@ -176,6 +176,12 @@ public class PatientController {
         return patientService.getAllPatientTestByPtId(ptId);
     }
 
+    @GetMapping(value = "patient/getPatientInformationByEmail/{patient_email}")
+    public PatientInformation getPatientInformationByEmail(@PathVariable String patient_email)
+    {
+    	PatientInformation objPatientInformation = patientService.getPatientByEmail(patient_email);
+		return objPatientInformation; 
+    }
 
 
 }

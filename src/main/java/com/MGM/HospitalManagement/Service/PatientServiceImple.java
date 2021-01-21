@@ -41,8 +41,8 @@ public class PatientServiceImple implements PatientService {
 	@Override
 	public int addPatientTreatment(PatientTreatment patientTreatement) {
 
-		patientTreatmentRepo.save(patientTreatement);
-		return 1;
+//		patientTreatmentRepo.save(patientTreatement);
+//		return 1;
 		PatientTreatment p = patientTreatmentRepo.save(patientTreatement);
 		return p.getPtId();
 
@@ -267,6 +267,12 @@ public class PatientServiceImple implements PatientService {
 	public List<PatientTest> getAllPatientTestByPtId(int ptId) {
 		return patientTestRepo.getPatientTestByPtId(ptId);
 
+	}
+
+	@Override
+	public PatientInformation getPatientByEmail(String patient_email) {
+		PatientInformation objPatientInformation = patientInformationRepo.findPatientByEmail(patient_email);
+		return objPatientInformation;
 	}
 
 }

@@ -65,7 +65,8 @@ public interface PatientService {
 	
 	PatientInformation getPatientByEmailAndPassword(String patient_email,String patient_password);
 
-
+	PatientInformation getPatientByEmail(String patient_email);
+	
 	List<PatientTreatment> getAllPatientTreatmentByPatientId(int patientId);
 
 	List<PatientMedicines> getAllPatientMedicinesByPtId(int ptId);
