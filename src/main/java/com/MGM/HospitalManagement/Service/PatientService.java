@@ -20,7 +20,7 @@ public interface PatientService {
 
 	PatientExamination getPatientExamination(int peId);
 
-	PatientTreatment getPatientTreatment(int ptId);
+	PatientTreatment getPatientTreatment(int patientId);
 
 	PatientMedicines getPatientMedicines(int pmId);
 
@@ -66,7 +66,7 @@ public interface PatientService {
 	PatientInformation getPatientByEmailAndPassword(String patient_email,String patient_password);
 
 
-	List<PatientTreatment> getAllPatientTreatmentByPeId(int peId);
+	List<PatientTreatment> getAllPatientTreatmentByPatientId(int patientId);
 
 	List<PatientMedicines> getAllPatientMedicinesByPtId(int ptId);
 

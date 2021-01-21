@@ -28,8 +28,9 @@ public class PatientController {
     }
 
     @PostMapping(value="patient/addPatientTreatment")
-    public void addPatientTreatment(@RequestBody PatientTreatment patientTreatment){
-        patientService.addPatientTreatment(patientTreatment);
+    public int addPatientTreatment(@RequestBody PatientTreatment patientTreatment){
+      int i =  patientService.addPatientTreatment(patientTreatment);
+      return i ;
     }
 
     @PostMapping(value="patient/addPatientMedicines")
@@ -154,14 +155,14 @@ public class PatientController {
         return patientService.getAllPatientInformationByNurseId(nurseId);
     }
 
-    @GetMapping(value="patient/getPatientInformationByDoctorId/{doctoeId}")
+    @GetMapping(value="patient/getPatientInformationByDoctorId/{doctorId}")
     public List<PatientInformation> getPatientInformatioinByDoctorId(@PathVariable int doctorId){
         return patientService.getAllPatientInformationByDoctorId(doctorId);
     }
 
-    @GetMapping(value="patient/getPatientTreatmentByPeId/{peId}")
-    public List<PatientTreatment> getPatientTreatmentByPeId(@PathVariable int peId){
-        return patientService.getAllPatientTreatmentByPeId(peId);
+    @GetMapping(value="patient/getPatientTreatmentByPatientId/{patientId}")
+    public List<PatientTreatment> getPatientTreatmentByPeId(@PathVariable int patientId){
+        return patientService.getAllPatientTreatmentByPatientId(patientId);
     }
 
     @GetMapping(value="patient/getPatientMedicinesByPtId/{ptId}")
