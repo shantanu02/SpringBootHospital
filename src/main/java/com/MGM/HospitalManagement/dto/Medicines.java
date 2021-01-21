@@ -12,6 +12,7 @@ public class Medicines {
     private String medicineName;
     private String medicineDesc;
     private String medicineType;
+
 	public int getMedicineId() {
 		return medicineId;
 	}

@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface PatientTreatmentRepo extends JpaRepository<PatientTreatment, Integer> {
 
-    @Query(value="select * from patient_treatment where pe_id = ?1",nativeQuery=true)
-    public List<PatientTreatment> getPatientTreatmentByPeId(int peId);
+    @Query(value="select * from patient_treatment where patient_id = ?1",nativeQuery=true)
+    public List<PatientTreatment> getPatientTreatmentByPatientId(int patientId);
 
 }
