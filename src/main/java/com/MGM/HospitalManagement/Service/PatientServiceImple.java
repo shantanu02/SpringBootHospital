@@ -40,8 +40,12 @@ public class PatientServiceImple implements PatientService {
 
 	@Override
 	public int addPatientTreatment(PatientTreatment patientTreatement) {
+
+		patientTreatmentRepo.save(patientTreatement);
+		return 1;
 		PatientTreatment p = patientTreatmentRepo.save(patientTreatement);
 		return p.getPtId();
+
 	}
 
 	@Override

@@ -54,4 +54,10 @@ public class NurseController {
 		nurseService.modifyNurse(nurse);
 	}
 	
+	@GetMapping(value = "nurse/nurseByEmail/{nurse_email}")
+	public Nurse getNurseByEmail(@PathVariable String nurse_email)
+	{
+		return nurseService.getNurseByEmail(nurse_email);
+	}
+	
 }
