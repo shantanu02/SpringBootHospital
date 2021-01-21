@@ -13,16 +13,15 @@ public class PatientTreatment {
     private String ptMDNote;
     private String ptDoctorNote;
     private String ptOthers;
-	private int peId;
-	public int getPeId() {
-		return peId;
+	private int patientId;
+
+	public int getPatientId() {
+		return patientId;
 	}
 
-	public void setPeId(int peId) {
-		this.peId = peId;
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
 	}
-
-
 
 	public int getPtId() {
 		return ptId;
@@ -54,14 +53,14 @@ public class PatientTreatment {
 	public void setPtOthers(String ptOthers) {
 		this.ptOthers = ptOthers;
 	}
-	public PatientTreatment(int ptId, String ptNurseNote, String ptMDNote, String ptDoctorNote, String ptOthers,int peId) {
+	public PatientTreatment(int ptId, String ptNurseNote, String ptMDNote, String ptDoctorNote, String ptOthers,int patientId) {
 		super();
 		this.ptId = ptId;
 		this.ptNurseNote = ptNurseNote;
 		this.ptMDNote = ptMDNote;
 		this.ptDoctorNote = ptDoctorNote;
 		this.ptOthers = ptOthers;
-		this.peId = peId;
+		this.patientId = patientId;
 	}
 	public PatientTreatment() {
 		super();
