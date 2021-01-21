@@ -176,12 +176,23 @@ public class PatientController {
         return patientService.getAllPatientTestByPtId(ptId);
     }
 
+
     @GetMapping(value = "patient/getPatientInformationByEmail/{patient_email}")
     public PatientInformation getPatientInformationByEmail(@PathVariable String patient_email)
     {
     	PatientInformation objPatientInformation = patientService.getPatientByEmail(patient_email);
 		return objPatientInformation; 
     }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping(value="patient/getPtIdByPatientId/{patientId}")
+    public List<Integer> getPatienTreatIdByPtId(@PathVariable int patientId){
+        return patientService.getPtIdbyPatientId(patientId);
+    }
+
+
+
+
 
 
 }

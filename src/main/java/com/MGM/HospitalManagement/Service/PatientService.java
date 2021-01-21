@@ -73,4 +73,6 @@ public interface PatientService {
 
 	List<PatientTest> getAllPatientTestByPtId(int ptId);
 
+	List<Integer> getPtIdbyPatientId(int patientId);
+
 }

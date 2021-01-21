@@ -270,9 +270,18 @@ public class PatientServiceImple implements PatientService {
 	}
 
 	@Override
+
 	public PatientInformation getPatientByEmail(String patient_email) {
 		PatientInformation objPatientInformation = patientInformationRepo.findPatientByEmail(patient_email);
 		return objPatientInformation;
 	}
+
+
+	public List<Integer> getPtIdbyPatientId(int patientId) {
+		return patientTreatmentRepo.getPatientTreatmentIdByPatientId(patientId);
+	}
+
+
+
 
 }
