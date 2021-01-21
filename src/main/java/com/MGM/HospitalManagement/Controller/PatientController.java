@@ -176,6 +176,14 @@ public class PatientController {
         return patientService.getAllPatientTestByPtId(ptId);
     }
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping(value="patient/getPtIdByPatientId/{patientId}")
+    public List<Integer> getPatienTreatIdByPtId(@PathVariable int patientId){
+        return patientService.getPtIdbyPatientId(patientId);
+    }
+
+
+
 
 
 }

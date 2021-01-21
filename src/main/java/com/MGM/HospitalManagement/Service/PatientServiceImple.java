@@ -269,4 +269,11 @@ public class PatientServiceImple implements PatientService {
 
 	}
 
+	@Override
+	public List<Integer> getPtIdbyPatientId(int patientId) {
+		return patientTreatmentRepo.getPatientTreatmentIdByPatientId(patientId);
+	}
+
+
+
 }
