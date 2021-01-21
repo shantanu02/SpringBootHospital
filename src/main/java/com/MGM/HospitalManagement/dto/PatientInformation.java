@@ -21,7 +21,7 @@ public class PatientInformation {
     private String patientGender;
     private String patientDOB;
     private String patientPhone;
-    private double patientWeight;
+    private String patientWeight;
     private String patientTriage;
     private String patientLMP;
     //change
@@ -123,10 +123,10 @@ public class PatientInformation {
 	public void setPatientPhone(String patientPhone) {
 		this.patientPhone = patientPhone;
 	}
-	public double getPatientWeight() {
+	public String getPatientWeight() {
 		return patientWeight;
 	}
-	public void setPatientWeight(double patientWeight) {
+	public void setPatientWeight(String patientWeight) {
 		this.patientWeight = patientWeight;
 	}
 	public String getPatientTriage() {
@@ -205,7 +205,7 @@ public class PatientInformation {
 	public PatientInformation(int patientId, String patientFName, String patientLName, String patientEmail,
 			String patientPassword, String patientAddress, String patientTempAddress, String patientCity,
 			String patientZipCode, String patientState, String patientGender, String patientDOB, String patientPhone,
-			double patientWeight, String patientTriage, String patientLMP, String patientComplaint,
+			String patientWeight, String patientTriage, String patientLMP, String patientComplaint,
 			String patientAllergies, String patientMedicalHistory, String patientSID, String patientOPD,
 			String patientIPD, String patientWard, String patientBedNo, String userRole, int doctorId, int nurseId) {
 		super();
