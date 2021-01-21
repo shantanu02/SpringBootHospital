@@ -41,7 +41,7 @@ public class PatientServiceImple implements PatientService {
 	@Override
 	public int addPatientTreatment(PatientTreatment patientTreatement) {
 		patientTreatmentRepo.save(patientTreatement);
-		return 0;
+		return 1;
 	}
 
 	@Override

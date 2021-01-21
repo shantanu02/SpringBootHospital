@@ -22,9 +22,10 @@ public class PatientController {
         return i ;
     }
 
+    
     @PostMapping(value="patient/addPatientExamination")
-    public void addPatientExamination(@RequestBody PatientExamination patientExamination){
-        patientService.addPatientExamination(patientExamination);
+    public int  addPatientExamination(@RequestBody PatientExamination patientExamination){
+       return patientService.addPatientExamination(patientExamination);
     }
 
     @PostMapping(value="patient/addPatientTreatment")
