@@ -17,4 +17,9 @@ public interface MedicinesRepo extends JpaRepository<Medicines, Integer> {
     @Query(value="select * from medicines where medicine_type = ?1",nativeQuery=true)
     public List<Medicines> getMedicinesByType(String medicineType);
 
+    @Query(value = "select  * from medicines where medicines.medicine_id in (select medicine_id from patient_treatment2 where patient_id=?1",nativeQuery = true)
+    public List<Medicines> getMedicinesBySubQuery(int patient_id);
+
+
+
 }

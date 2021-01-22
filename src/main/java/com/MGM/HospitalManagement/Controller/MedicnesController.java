@@ -32,5 +32,17 @@ public class MedicnesController {
     }
 
 
+    @GetMapping(value="medicines/getMedcinesByPatientId/{patientId}")
+    public List<Medicines> getAllMedicinesByPatientId(@PathVariable int patientId){
+
+        return medicinesService.getMedicinesByPatientId(patientId);
+    }
+
+    @GetMapping(value="medicines/getAllMedcines")
+    public List<Medicines> getAllMedicines(){
+
+        return medicinesService.getAllMedicines();
+    }
+
 
 }
