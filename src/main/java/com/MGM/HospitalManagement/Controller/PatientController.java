@@ -4,6 +4,7 @@ import com.MGM.HospitalManagement.Service.MedicinesService;
 import com.MGM.HospitalManagement.Service.PatientService;
 import com.MGM.HospitalManagement.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.DomainEvents;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -204,8 +205,23 @@ public class PatientController {
     	return medicinesService.getMedicinesType(medicineType);
     }
 
+@PostMapping(value = "patientTreatment2/addPatintTreatment2")
+    public  void addPatientTreament2(@RequestBody PatientTreatment2 patientTreatment2)
+    {
+    	patientService.addPatientTreatment2(patientTreatment2);
+    }
 
+ @DeleteMapping(value = "patientTreatment2/deletePatientTreatment2ById/{pt2Id}")
+	public void deletePatientTreatment2(@PathVariable int pt2Id)
+	{
+		patientService.deletePatientTreatment2(pt2Id);
+	}
 
+ @GetMapping(value = "patientTreatment2/getPatientTreatment2ById/{patientId}")
+ public List<PatientTreatment2> GetAllPatientTreatment2ById(int patientId)
+ {
+	 return patientService.getAllPatientTreatment2ByPatientId(patientId);
+ }
 
 
 }
