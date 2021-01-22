@@ -1,5 +1,6 @@
 package com.MGM.HospitalManagement.Controller;
 
+import com.MGM.HospitalManagement.Service.MedicinesService;
 import com.MGM.HospitalManagement.Service.PatientService;
 import com.MGM.HospitalManagement.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,8 @@ public class PatientController {
     @Autowired
     private PatientService patientService;
 
-
+    @Autowired
+    private MedicinesService medicinesService;
 
     @PostMapping(value="patient/addPatientInformation")
     public int addPatientInformation(@RequestBody PatientInformation patientInformation){
@@ -189,7 +191,18 @@ public class PatientController {
     public List<Integer> getPatienTreatIdByPtId(@PathVariable int patientId){
         return patientService.getPtIdbyPatientId(patientId);
     }
+    
+    @GetMapping(value = "medicines/getAllMedicines")
+    public List<Medicines> getAllMedicines()
+    {
+    	return patientService.getAllMedicines();
+    }
 
+    @GetMapping(value = "medicines/getAllMedicinesByType/{medicineType}")
+    public List<Medicines> getAllMedicinesByType(@PathVariable String medicineType)
+    {
+    	return medicinesService.getMedicinesType(medicineType);
+    }
 
 
 

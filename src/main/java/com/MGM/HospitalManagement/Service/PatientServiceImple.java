@@ -24,6 +24,8 @@ public class PatientServiceImple implements PatientService {
 	@Autowired
 	PatientTestRepo patientTestRepo;
 
+	@Autowired
+	MedicinesRepo medicinesRepo;
 	@Override
 	public int addPatientInformation(PatientInformation patientInformation) {
 
@@ -279,6 +281,19 @@ public class PatientServiceImple implements PatientService {
 
 	public List<Integer> getPtIdbyPatientId(int patientId) {
 		return patientTreatmentRepo.getPatientTreatmentIdByPatientId(patientId);
+	}
+
+	@Override
+	public List<Medicines> getAllMedicines() {
+		Iterable<Medicines> iterable =medicinesRepo .findAll();
+		Iterator<Medicines> iterator = iterable.iterator();
+
+		List<Medicines> resultList = new ArrayList<>();
+		while(iterator.hasNext()) {
+			resultList.add(iterator.next());
+		}
+
+		return resultList;
 	}
 
 
