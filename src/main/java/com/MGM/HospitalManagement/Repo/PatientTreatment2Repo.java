@@ -12,4 +12,7 @@ public interface PatientTreatment2Repo  extends JpaRepository<PatientTreatment2,
 
     @Query(value="select * from patient_treatment2 where patient_id = ?1",nativeQuery=true)
     public List<PatientTreatment2> getPatientTreatmentByPatientId(int patientId);
+
+
+
 }

@@ -83,5 +83,9 @@ public interface PatientService {
 	
 	List<PatientTreatment2> getAllPatientTreatment2ByPatientId(int patientId);
 
+
+	int deleteMedicineByPt2Id(int pt2Id);
+
 	List<PatientInformation> getPatientInformationByNurseId(int nurseId);
+
 }

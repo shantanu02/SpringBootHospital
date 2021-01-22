@@ -218,9 +218,9 @@ public class PatientController {
     }
 
  @DeleteMapping(value = "patientTreatment2/deletePatientTreatment2ById/{pt2Id}")
-	public void deletePatientTreatment2(@PathVariable int pt2Id)
+	public int deletePatientTreatment2(@PathVariable int pt2Id)
 	{
-		patientService.deletePatientTreatment2(pt2Id);
+		return patientService.deleteMedicineByPt2Id(pt2Id);
 	}
 
  @GetMapping(value = "patientTreatment2/getPatientTreatment2ById/{patientId}")
@@ -228,6 +228,7 @@ public class PatientController {
  {
 	 return patientService.getAllPatientTreatment2ByPatientId(patientId);
  }
+
 
 
 }
