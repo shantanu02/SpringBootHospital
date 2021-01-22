@@ -317,6 +317,7 @@ public class PatientServiceImple implements PatientService {
 	}
 
 	@Override
+
 	public int deleteMedicineByPt2Id(int pt2Id) {
 
 
@@ -328,6 +329,11 @@ public class PatientServiceImple implements PatientService {
 			patientTreatment2Repo.deleteById(pt2Id);
 			return 1;
 		}
+
+
+	public List<PatientInformation> getPatientInformationByNurseId(int nurseId) {
+		
+		return patientInformationRepo.getPatientInformationByNurseId(nurseId);
 
 	}
 
