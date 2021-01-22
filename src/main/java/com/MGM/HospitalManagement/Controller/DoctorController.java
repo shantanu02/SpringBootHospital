@@ -53,5 +53,12 @@ public class DoctorController {
 	{
 		return doctorService.getDoctor(doctor_id);
 	}
+	@GetMapping(value = "doctor/getDoctorByEmail/{doctor_email}")
+	public Doctor getDoctorByEmail(@PathVariable String doctor_email)
+	{
+		return doctorService.getDoctorByEmail(doctor_email);
+	}
+	
+	
 
 }
