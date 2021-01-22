@@ -109,6 +109,12 @@ public class PatientController {
         return patientService.getPatientExamination(peId);
     }
 
+    @GetMapping(value = "patient/getPatientByNurse/{nurse_id}")
+    public List<PatientInformation> getPatientInformationByNurse(@PathVariable int nurse_id)
+    {
+    	return patientService.getPatientInformationByNurseId(nurse_id);
+    }
+    
     @GetMapping(value="patient/getPatientTreatment/{ptId}")
     public PatientTreatment getPatientTreatment(@PathVariable int ptId) {
         return patientService.getPatientTreatment(ptId);

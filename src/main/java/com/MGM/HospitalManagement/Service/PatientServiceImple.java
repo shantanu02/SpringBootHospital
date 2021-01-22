@@ -316,5 +316,11 @@ public class PatientServiceImple implements PatientService {
 		return patientTreatment2Repo.getPatientTreatmentByPatientId(patientId);
 	}
 
+	@Override
+	public List<PatientInformation> getPatientInformationByNurseId(int nurseId) {
+		
+		return patientInformationRepo.getPatientInformationByNurseId(nurseId);
+	}
+
 
 }
