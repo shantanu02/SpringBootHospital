@@ -74,6 +74,13 @@ public interface PatientService {
 	List<PatientTest> getAllPatientTestByPtId(int ptId);
 
 	List<Integer> getPtIdbyPatientId(int patientId);
+	
 	List<Medicines> getAllMedicines();
+	
+	int addPatientTreatment2(PatientTreatment2 patientTreatment2 );
+	
+	int deletePatientTreatment2(int pt2Id);
+	
+	List<PatientTreatment2> getAllPatientTreatment2ByPatientId(int patientId);
 
 }
