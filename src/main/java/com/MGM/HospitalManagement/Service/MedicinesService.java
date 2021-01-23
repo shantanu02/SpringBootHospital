@@ -10,4 +10,9 @@ public interface MedicinesService {
 
     public List<Medicines> getMedicinesType(String medicineType);
 
+    public List<Medicines> getMedicinesByPatientId(int patientId);
+
+    public List<Medicines> getAllMedicines();
+
+
 }

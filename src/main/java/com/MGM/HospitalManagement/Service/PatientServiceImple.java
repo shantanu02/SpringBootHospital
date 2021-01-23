@@ -313,18 +313,8 @@ public class PatientServiceImple implements PatientService {
 
 	@Override
 	public List<PatientTreatment2> getAllPatientTreatment2ByPatientId(int patientId) {
-		Iterable<PatientTreatment2> iterable =patientTreatment2Repo .findAll();
-		Iterator<PatientTreatment2> iterator = iterable.iterator();
-
-		List<PatientTreatment2> resultList = new ArrayList<>();
-		while(iterator.hasNext()) {
-			resultList.add(iterator.next());
-		}
-
-		return resultList;
+		return patientTreatment2Repo.getPatientTreatmentByPatientId(patientId);
 	}
-
-
 
 
 }

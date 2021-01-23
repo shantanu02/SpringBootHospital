@@ -218,7 +218,7 @@ public class PatientController {
 	}
 
  @GetMapping(value = "patientTreatment2/getPatientTreatment2ById/{patientId}")
- public List<PatientTreatment2> GetAllPatientTreatment2ById(int patientId)
+ public List<PatientTreatment2> GetAllPatientTreatment2ById(@PathVariable int patientId)
  {
 	 return patientService.getAllPatientTreatment2ByPatientId(patientId);
  }

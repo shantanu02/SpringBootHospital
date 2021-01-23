@@ -17,6 +17,26 @@ public class PatientTreatment2 {
 	private String dosage;
 	private String time;
 	private int patientId;
+	private String doctorNote;
+	private String nurseNote;
+
+
+	public String getDoctorNote() {
+		return doctorNote;
+	}
+
+	public void setDoctorNote(String doctorNote) {
+		this.doctorNote = doctorNote;
+	}
+
+	public String getNurseNote() {
+		return nurseNote;
+	}
+
+	public void setNurseNote(String nurseNote) {
+		this.nurseNote = nurseNote;
+	}
+
 	public int getPt2Id() {
 		return pt2Id;
 	}
@@ -47,18 +67,22 @@ public class PatientTreatment2 {
 	public void setPatientId(int patientId) {
 		this.patientId = patientId;
 	}
-	public PatientTreatment2(int pt2Id, int medicineId, String dosage, String time, int patientId) {
+
+	public PatientTreatment2() {
 		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public PatientTreatment2(int pt2Id, int medicineId, String dosage, String time, int patientId, String doctorNote, String nurseNote) {
 		this.pt2Id = pt2Id;
 		this.medicineId = medicineId;
 		this.dosage = dosage;
 		this.time = time;
 		this.patientId = patientId;
+		this.doctorNote = doctorNote;
+		this.nurseNote = nurseNote;
 	}
-	public PatientTreatment2() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+
 	@Override
 	public String toString() {
 		return "PatientTreatment2 [pt2Id=" + pt2Id + ", medicineId=" + medicineId + ", dosage=" + dosage + ", time="
