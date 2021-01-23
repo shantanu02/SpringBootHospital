@@ -323,19 +323,19 @@ public class PatientServiceImple implements PatientService {
 
 		Optional<PatientTreatment2> optional = patientTreatment2Repo.findById(pt2Id);
 		PatientTreatment2 p = optional.get();
-		if(p==null){
+		if (p == null) {
 			return 0;
-		}else{
+		} else {
 			patientTreatment2Repo.deleteById(pt2Id);
 			return 1;
 		}
 
-
-	public List<PatientInformation> getPatientInformationByNurseId(int nurseId) {
-		
-		return patientInformationRepo.getPatientInformationByNurseId(nurseId);
-
 	}
+		public List<PatientInformation> getPatientInformationByNurseId ( int nurseId){
+
+			return patientInformationRepo.getPatientInformationByNurseId(nurseId);
+
+		}
 
 
 }
