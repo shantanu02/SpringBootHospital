@@ -316,5 +316,20 @@ public class PatientServiceImple implements PatientService {
 		return patientTreatment2Repo.getPatientTreatmentByPatientId(patientId);
 	}
 
+	@Override
+	public int deleteMedicineByPt2Id(int pt2Id) {
+
+
+		Optional<PatientTreatment2> optional = patientTreatment2Repo.findById(pt2Id);
+		PatientTreatment2 p = optional.get();
+		if(p==null){
+			return 0;
+		}else{
+			patientTreatment2Repo.deleteById(pt2Id);
+			return 1;
+		}
+
+	}
+
 
 }
