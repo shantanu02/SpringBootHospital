@@ -4,9 +4,11 @@ import java.util.List;
 
 import com.MGM.HospitalManagement.dto.*;
 
+import javax.mail.MessagingException;
+
 public interface PatientService {
 
-	int addPatientInformation(PatientInformation patientInformation);
+	int addPatientInformation(PatientInformation patientInformation) throws MessagingException;
 
 	int addPatientTreatment(PatientTreatment patientTreatement);
 
