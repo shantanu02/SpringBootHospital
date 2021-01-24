@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.DomainEvents;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
 import java.util.List;
 
 @RestController
@@ -20,7 +21,7 @@ public class PatientController {
     private MedicinesService medicinesService;
 
     @PostMapping(value="patient/addPatientInformation")
-    public int addPatientInformation(@RequestBody PatientInformation patientInformation){
+    public int addPatientInformation(@RequestBody PatientInformation patientInformation) throws MessagingException {
         int i = patientService.addPatientInformation(patientInformation);
         return i ;
     }

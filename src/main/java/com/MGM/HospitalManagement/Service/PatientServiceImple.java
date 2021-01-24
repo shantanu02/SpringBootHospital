@@ -5,10 +5,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
+import com.MGM.HospitalManagement.MailFeature;
 import com.MGM.HospitalManagement.Repo.*;
 import com.MGM.HospitalManagement.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.mail.MessagingException;
 
 @Service
 public class PatientServiceImple implements PatientService {
@@ -24,18 +27,29 @@ public class PatientServiceImple implements PatientService {
 	@Autowired
 	PatientTestRepo patientTestRepo;
 
+
 	@Autowired
 	PatientTreatment2Repo patientTreatment2Repo;
 	
 	@Autowired
 	MedicinesRepo medicinesRepo;
+
+	@Autowired
+	private MailFeature mailFeature;
+
 	@Override
-	public int addPatientInformation(PatientInformation patientInformation) {
+	public int addPatientInformation(PatientInformation patientInformation) throws MessagingException {
 
 		PatientInformation p = patientInformationRepo.findPatientByEmail(patientInformation.getPatientEmail());
 
 		if(p == null){
 			patientInformationRepo.save(patientInformation);
+			mailFeature.send(
+					patientInformation.getPatientEmail(),
+					"MGM Hospital Management System",
+						"Your Login Id :"+patientInformation.getPatientEmail()+
+								"\n Your Password :"+patientInformation.getPatientPassword()
+					);
 			return 1;
 		}else{
 			return 0;

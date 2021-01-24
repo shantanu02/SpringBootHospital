@@ -28,6 +28,7 @@ public class Doctor {
     private String doctorSpecialization;
     private double doctorExperience;
     private String userRole = "doctor";
+
 	public Doctor(int doctorId, String doctorFName, String doctorLName, String doctorEmail, String doctorPassword,
 			String doctorPhone, String doctorAddress, String doctorCity, String doctorZipCode, String doctorState,
 			String doctorGender, String doctorDOB, String doctorQualification, String doctorSpecialization,
